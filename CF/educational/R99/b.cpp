@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
 
 int main() {
   ios::sync_with_stdio(false);
@@ -8,15 +9,12 @@ int main() {
   int tt;
   cin >> tt;
   while (tt--) {
-	int n;
-	cin >> n;
-	set<int> b;
-	for (int i = 0; i < n; i++) {
-	  int x;
-	  cin >> x;
-	  b.insert(x);
-	}
-	cout << (b.size() == n ? "NO" : "YES") << '\n';
+    int x;
+    cin >> x;
+    int s = 0;
+    while (s * (s + 1) / 2 < x) s++;
+    if  (s * (s + 1) / 2 == x + 1) s++;
+    cout << s << '\n';
   }
   return 0;
 }
